@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+     <!DOCTYPE html>
     <html lang="fr">
     <head>
         <meta charset="UTF-8">
@@ -490,6 +490,41 @@ a r
     0%, 100% { transform: translate(0, 0); }
     50% { transform: translate(30px, 40px); }
 }
+.water-text-top {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+    font-size: 0.95em;
+    letter-spacing: 1px;
+    font-weight: 400;
+    opacity: 0.95;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+/* Bouées photographiques réalistes */
+.pool-float {
+    position: absolute;
+    z-index: 5;
+    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.4));
+}
+.pool-float:nth-child(2) {
+    width: 160px;
+}
+height: 160px;
+top: 28%;
+left: 15%;
+background:
+    conic-gradient(from 0deg at 50% 50%,
+        #1A2F3A 0deg, #1A2F3A 45deg,
+        #E8D4C1 45deg, #E8D4C1 90deg,
+        #1A2F3A 90deg, #1A2F3A 135deg,
+        #E8D4C1 135deg, #E8D4C1 180deg,
+        #1A2F3A 180deg, #1A2F3A 225deg,
+        #E8D4C1 225deg, #E8D4C1 270deg,
+        #1A2F3A 270deg, #1A2F3A 315deg,
+        #E8D4C1 315deg, #E8D4C1 360deg
+    );
 border-radius: 50%;
 box-shadow:
     inset 0 -5px 15px rgba(0,0,0,0.3),
