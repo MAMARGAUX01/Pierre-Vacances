@@ -849,4 +849,45 @@ function changeSlide(direction) {
 
 showSlide(currentSlide + direction); }
 showSlide(0); </script>
+  <div class="navigation">
+  <button id="prevBtn" disabled>← Précédent</button>
+  <button id="nextBtn">Suivant →</button>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const nextBtn = document.getElementById('nextBtn');
+  const prevBtn = document.getElementById('prevBtn');
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+
+    // Gérer l'état des boutons
+    prevBtn.disabled = index === 0;
+    nextBtn.disabled = index === slides.length - 1;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    if (currentSlide < slides.length - 1) {
+      currentSlide++;
+      showSlide(currentSlide);
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (currentSlide > 0) {
+      currentSlide--;
+      showSlide(currentSlide);
+    }
+  });
+
+  // Navigation clavier (← →)
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') nextBtn.click();
+    if (e.key === 'ArrowLeft') prevBtn.click();
+  });
+</script>
 </body> </html>
