@@ -498,252 +498,26 @@
             font-weight: 600;
             font-size: 0.95em;
         }
+.insta-image {
+    width: 100%;
+    aspect-ratio: 1;
+    background: #000;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        .insta-image {
-            width: 100%;
-            aspect-ratio: 1;
-            background: 
-                radial-gradient(ellipse at 30% 40%, rgba(255,255,255,0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 70% 60%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                linear-gradient(180deg, #2D7F8E 0%, #1F6B7A 50%, #0F4F5C 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            position: relative;
-            overflow: hidden;
-            padding: 25px;
-        }
+.insta-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-        /* Texture réaliste de l'eau */
-        .insta-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                repeating-linear-gradient(90deg, transparent 0px, rgba(255,255,255,0.02) 1px, transparent 2px, transparent 8px),
-                repeating-linear-gradient(0deg, transparent 0px, rgba(255,255,255,0.02) 1px, transparent 2px, transparent 8px);
-            opacity: 0.6;
-            animation: waterRipple 20s linear infinite;
-        }
+        <div class="insta-image">
+    <img src="assets/insta-photo.jpg" alt="Publication Instagram Pierre & Vacances" class="insta-photo">
+</div>
 
-        @keyframes waterRipple {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(10px, 10px); }
-        }
-
-        /* Reflets lumineux réalistes */
-        .insta-image::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at center, rgba(255,255,255,0.12) 0%, transparent 30%);
-            animation: lightMove 15s ease-in-out infinite;
-        }
-
-        @keyframes lightMove {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(30px, 40px); }
-        }
-
-        .water-text-top {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            color: white;
-            margin-top: 10px;
-            font-size: 0.95em;
-            letter-spacing: 1px;
-            font-weight: 400;
-            opacity: 0.95;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.25);
-        }
-
-        /* Bouées photographiques réalistes */
-        .pool-float {
-            position: absolute;
-            z-index: 5;
-            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.4));
-        }
-
-        .pool-float:nth-child(2) {
-            width: 160px;
-            height: 160px;
-            top: 28%;
-            left: 15%;
-            background: 
-                conic-gradient(from 0deg at 50% 50%,
-                    #1A2F3A 0deg, #1A2F3A 45deg,
-                    #E8D4C1 45deg, #E8D4C1 90deg,
-                    #1A2F3A 90deg, #1A2F3A 135deg,
-                    #E8D4C1 135deg, #E8D4C1 180deg,
-                    #1A2F3A 180deg, #1A2F3A 225deg,
-                    #E8D4C1 225deg, #E8D4C1 270deg,
-                    #1A2F3A 270deg, #1A2F3A 315deg,
-                    #E8D4C1 315deg, #E8D4C1 360deg
-                );
-            border-radius: 50%;
-            box-shadow: 
-                inset 0 -5px 15px rgba(0,0,0,0.3),
-                inset 0 5px 15px rgba(255,255,255,0.2),
-                0 20px 40px rgba(0,0,0,0.3);
-            animation: floatRealistic1 5s ease-in-out infinite;
-        }
-
-        .pool-float:nth-child(2)::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 50%;
-            height: 50%;
-            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .pool-float:nth-child(3) {
-            width: 140px;
-            height: 140px;
-            bottom: 22%;
-            right: 18%;
-            background: 
-                conic-gradient(from 22.5deg at 50% 50%,
-                    #1A2F3A 0deg, #1A2F3A 45deg,
-                    #E8D4C1 45deg, #E8D4C1 90deg,
-                    #1A2F3A 90deg, #1A2F3A 135deg,
-                    #E8D4C1 135deg, #E8D4C1 180deg,
-                    #1A2F3A 180deg, #1A2F3A 225deg,
-                    #E8D4C1 225deg, #E8D4C1 270deg,
-                    #1A2F3A 270deg, #1A2F3A 315deg,
-                    #E8D4C1 315deg, #E8D4C1 360deg
-                );
-            border-radius: 50%;
-            box-shadow: 
-                inset 0 -5px 15px rgba(0,0,0,0.3),
-                inset 0 5px 15px rgba(255,255,255,0.2),
-                0 20px 40px rgba(0,0,0,0.3);
-            animation: floatRealistic2 6s ease-in-out infinite;
-        }
-
-        .pool-float:nth-child(3)::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 50%;
-            height: 50%;
-            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        /* Silhouettes de personnes réalistes */
-        .person {
-            position: absolute;
-            z-index: 6;
-            filter: drop-shadow(0 10px 25px rgba(0,0,0,0.5));
-        }
-
-        .person:nth-child(4) {
-            top: 32%;
-            left: 18%;
-            width: 100px;
-            height: 100px;
-            background: radial-gradient(ellipse at center, #8B6F5C 0%, #6B5345 100%);
-            border-radius: 50% 50% 40% 40%;
-            transform: rotate(-15deg);
-            animation: floatPerson1 5s ease-in-out infinite;
-        }
-
-        .person:nth-child(4)::before {
-            content: '';
-            position: absolute;
-            top: -15px;
-            left: 10px;
-            width: 35px;
-            height: 35px;
-            background: radial-gradient(circle, #8B6F5C 0%, #6B5345 100%);
-            border-radius: 50%;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-
-        .person:nth-child(4)::after {
-            content: '';
-            position: absolute;
-            bottom: -20px;
-            right: -10px;
-            width: 45px;
-            height: 60px;
-            background: linear-gradient(135deg, #8B6F5C 0%, #6B5345 100%);
-            border-radius: 40% 40% 50% 50%;
-            transform: rotate(20deg);
-        }
-
-        .person:nth-child(5) {
-            bottom: 26%;
-            right: 21%;
-            width: 90px;
-            height: 90px;
-            background: radial-gradient(ellipse at center, #A07D65 0%, #8B6F5C 100%);
-            border-radius: 45% 45% 50% 50%;
-            transform: rotate(12deg);
-            animation: floatPerson2 6s ease-in-out infinite;
-        }
-
-        .person:nth-child(5)::before {
-            content: '';
-            position: absolute;
-            top: -12px;
-            right: 15px;
-            width: 32px;
-            height: 32px;
-            background: radial-gradient(circle, #A07D65 0%, #8B6F5C 100%);
-            border-radius: 50%;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-
-        .person:nth-child(5)::after {
-            content: '';
-            position: absolute;
-            top: 15px;
-            left: -15px;
-            width: 50px;
-            height: 55px;
-            background: linear-gradient(135deg, #A07D65 0%, #8B6F5C 100%);
-            border-radius: 50% 50% 40% 40%;
-            transform: rotate(-25deg);
-        }
-
-        @keyframes floatRealistic1 {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(3px, -8px) rotate(2deg); }
-            50% { transform: translate(-2px, -12px) rotate(-1deg); }
-            75% { transform: translate(4px, -6px) rotate(3deg); }
-        }
-
-        @keyframes floatRealistic2 {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(-4px, -6px) rotate(-2deg); }
-            50% { transform: translate(2px, -10px) rotate(1deg); }
-            75% { transform: translate(-3px, -8px) rotate(-3deg); }
-        }
-
-        @keyframes floatPerson1 {
-            0%, 100% { transform: translate(0, 0) rotate(-15deg); }
-            50% { transform: translate(5px, -8px) rotate(-12deg); }
-        }
-
-        @keyframes floatPerson2 {
-            0%, 100% { transform: translate(0, 0) rotate(12deg); }
-            50% { transform: translate(-4px, -6px) rotate(15deg); }
-        }
 
         .insta-actions {
             padding: 15px;
